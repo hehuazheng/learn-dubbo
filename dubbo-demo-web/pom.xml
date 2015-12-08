@@ -12,14 +12,12 @@
 	<packaging>war</packaging>
 	<name>dubbo-demo-web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	   <properties>
-        <!-- Generic properties -->
-        <java.version>1.6</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
-	<dependencies>
-	</dependencies>
+	<properties>
+		<!-- Generic properties -->
+		<java.version>1.6</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 	<build>
 		<finalName>dubbo-demo-web</finalName>
 	</build>
