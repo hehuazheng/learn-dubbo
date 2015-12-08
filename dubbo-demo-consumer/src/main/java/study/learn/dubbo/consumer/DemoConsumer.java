@@ -11,7 +11,7 @@ import study.learn.dubbo.api.DemoService;
 public class DemoConsumer {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				"src/resources/dubbo-demo-consumer.xml");
+				"dubbo-demo-consumer.xml");
 		context.start();
 		DemoService demoService = (DemoService) context.getBean("demoService");
 		System.out.println(demoService.sayString("halo"));
