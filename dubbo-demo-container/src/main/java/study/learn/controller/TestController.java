@@ -24,4 +24,11 @@ public class TestController {
 	public String testAopAnno(String str) {
 		return demoService.sayString(str);
 	}
+	
+	@ResponseBody
+	@RequestMapping("/testTrac")
+	public String testTransaction(String id) {
+		demoService.testTransaction(Integer.parseInt(id));
+		return "succ";
+	}
 }

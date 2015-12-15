@@ -11,11 +11,13 @@
 		      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
 	<context:annotation-config />
+		<import resource="dubbo-provider.xml" />
 	<context:component-scan base-package="study">
 <!-- 		<context:exclude-filter type="annotation" -->
 <!-- 			expression="org.springframework.stereotype.Controller" /> -->
 	</context:component-scan>
 	
+		
 	<bean
         class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
     <bean
@@ -36,7 +38,7 @@
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl"
-			value="jdbc:mysql://qserver1:3306/studyread?characterEncoding=UTF8" />
+			value="jdbc:mysql://qserver1:3306/study?characterEncoding=UTF8" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
@@ -62,6 +64,6 @@
 		<property name="basePackage" value="study.learn.dao"></property>
 	</bean>
 	
-	<import resource="dubbo-provider.xml" />
+
 
 </beans>

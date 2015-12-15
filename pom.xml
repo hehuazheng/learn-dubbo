@@ -13,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<org.springframework.version>3.2.15.RELEASE</org.springframework.version>
+		<org.springframework.version>3.2.7.RELEASE</org.springframework.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -139,13 +139,13 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
+			<version>1.7.5</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
+			<version>1.0.13</version>
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>

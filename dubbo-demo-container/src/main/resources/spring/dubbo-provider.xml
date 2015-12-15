@@ -6,7 +6,6 @@
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 	<dubbo:application name="dubbo-demo-provider-container-app" />
 	<dubbo:registry address="zookeeper://zkserver1:2181" />
-<!-- 	<dubbo:application name="dubbo-demo-provider" /> -->
 	<dubbo:protocol name="dubbo" port="20880" accesslog="d:/dubbo.log" />
     <dubbo:service interface="study.learn.dubbo.api.DemoService" ref="demoServiceImpl" retries="0" delay="-1"   />
 </beans>

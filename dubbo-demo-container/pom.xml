@@ -18,6 +18,11 @@
 			<artifactId>dubbo-demo-provider</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>study.learn</groupId>
+			<artifactId>dubbo-demo-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>dubbo-demo-container</finalName>
