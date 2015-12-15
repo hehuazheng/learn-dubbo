@@ -18,7 +18,7 @@ public class TestAopLanguageAspect {
 	 * @return
 	 * @throws Throwable
 	 */
-	@Around("within(study.learn.dubbo..*) and @annotation(anno)")
+	@Around("@annotation(anno)")
 	public Object usePackage(ProceedingJoinPoint joinPoint, TestAnnotation anno)
 			throws Throwable {
 		System.out.println("use package aspect start - " + anno.value());
