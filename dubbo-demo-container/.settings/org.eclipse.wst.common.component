@@ -11,9 +11,6 @@
         <dependent-module archiveName="dubbo-demo-api-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dubbo-demo-api/dubbo-demo-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="dubbo-demo-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dubbo-demo-common/dubbo-demo-common">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="dubbo-demo-container"/>
         <property name="java-output-path" value="/dubbo-demo-container/target/classes"/>
     </wb-module>
