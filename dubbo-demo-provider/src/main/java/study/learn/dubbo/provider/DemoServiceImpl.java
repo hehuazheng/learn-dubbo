@@ -2,8 +2,6 @@ package study.learn.dubbo.provider;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Transactional;
 
 import study.learn.annotation.TestAnnotation;
 import study.learn.dao.mapper.Tb1Mapper;
@@ -38,7 +36,7 @@ public class DemoServiceImpl implements DemoService {
 	}
 
 	@Override
-	@Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
+	@TestAnnotation
 	public String testTransactionDirectly(int id) {
 		Tb1 r = new Tb1();
 		r.setId(id);

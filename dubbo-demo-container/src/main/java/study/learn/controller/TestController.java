@@ -31,4 +31,11 @@ public class TestController {
 		demoService.testTransaction(Integer.parseInt(id));
 		return "succ";
 	}
+	
+	@ResponseBody
+	@RequestMapping("/testTracDirectly")
+	public String testTracDirectly(String id) {
+		demoService.testTransactionDirectly(Integer.parseInt(id));
+		return "succ";
+	}
 }

@@ -3,11 +3,9 @@ package study.learn.aop;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
 
 import study.learn.annotation.TestAnnotation;
 
-@Component
 @Aspect
 public class TestAopLanguageAspect {
 
