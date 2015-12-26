@@ -14,7 +14,7 @@ public class DemoTransactionConsumer {
 				"dubbo-demo-consumer.xml");
 		context.start();
 		DemoService demoService = (DemoService) context.getBean("demoService");
-		System.out.println(demoService.testTransaction(2));
+		System.out.println(demoService.testTransaction(4));
 		context.close();
 	}
 }

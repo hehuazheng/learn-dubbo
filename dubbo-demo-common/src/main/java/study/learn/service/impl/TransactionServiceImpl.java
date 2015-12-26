@@ -19,8 +19,6 @@ public class TransactionServiceImpl implements TransactionService {
 	@Autowired
 	private Tb2Mapper tb2Mapper;
 
-	// 1 private 事务不生效
-	// 2 final 事务不生效
 	@Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
 	public void addInto2Tables(int id) {
 		Tb1 r = new Tb1();
