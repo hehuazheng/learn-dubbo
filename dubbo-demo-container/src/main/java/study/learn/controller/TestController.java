@@ -19,16 +19,22 @@ public class TestController {
 		return "hello " + name;
 	}
 	
+//	@ResponseBody
+//	@RequestMapping("/testAnnotationOnDubboService")
+//	public String testAopAnno(String str) {
+//		return demoService.sayString(str);
+//	}
+//	
+//	@ResponseBody
+//	@RequestMapping("/testTrac")
+//	public String testTransaction(String id) {
+//		demoService.testTransaction(Integer.parseInt(id));
+//		return "succ";
+//	}
 	@ResponseBody
-	@RequestMapping("/testAnnotationOnDubboService")
-	public String testAopAnno(String str) {
-		return demoService.sayString(str);
-	}
-	
-	@ResponseBody
-	@RequestMapping("/testTrac")
-	public String testTransaction(String id) {
-		demoService.testTransaction(Integer.parseInt(id));
+	@RequestMapping("/testTracDirect")
+	public String testTracDirect(String id) {
+		demoService.testTransactionDirectly(Integer.parseInt(id));
 		return "succ";
 	}
 }

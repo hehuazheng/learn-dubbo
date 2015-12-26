@@ -11,29 +11,29 @@
 		      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
 	<context:annotation-config />
-		<import resource="dubbo-provider.xml" />
+	<import resource="dubbo-provider.xml" />
 	<context:component-scan base-package="study">
-<!-- 		<context:exclude-filter type="annotation" -->
-<!-- 			expression="org.springframework.stereotype.Controller" /> -->
+		<!-- <context:exclude-filter type="annotation" -->
+		<!-- expression="org.springframework.stereotype.Controller" /> -->
 	</context:component-scan>
-	
-		
+	<bean id="simpleInterceptor" class="study.learn.aop.SimpleMethodInterceptor" />
+
 	<bean
-        class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
-    <bean
-        class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <bean
-                    class="org.springframework.http.converter.StringHttpMessageConverter">
-                    <constructor-arg value="UTF-8" />
-                </bean>
-                <bean
-                    class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
-            </list>
-        </property>
-    </bean>
-    
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter">
+					<constructor-arg value="UTF-8" />
+				</bean>
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
 	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
@@ -42,14 +42,14 @@
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
-	
+
 	<!-- 事务配置 -->
-    <bean id="transactionManager"
-        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
-    </bean>
-    
-    <tx:annotation-driven />
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:annotation-driven />
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:/spring/mybatis-config.xml"></property>
@@ -63,7 +63,9 @@
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<property name="basePackage" value="study.learn.dao"></property>
 	</bean>
-	
 
-
+	<aop:config>
+		<aop:advisor advice-ref="simpleInterceptor"
+			pointcut="@annotation(study.learn.annotation.TestAnnotation)" />
+	</aop:config>
 </beans>
