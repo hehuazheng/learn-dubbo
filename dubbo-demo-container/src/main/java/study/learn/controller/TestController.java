@@ -12,25 +12,26 @@ import study.learn.dubbo.api.DemoService;
 public class TestController {
 	@Autowired
 	private DemoService demoService;
-	
+
 	@ResponseBody
 	@RequestMapping("/hw")
 	public String helloWorld(String name) {
 		return "hello " + name;
 	}
-	
-//	@ResponseBody
-//	@RequestMapping("/testAnnotationOnDubboService")
-//	public String testAopAnno(String str) {
-//		return demoService.sayString(str);
-//	}
-//	
-//	@ResponseBody
-//	@RequestMapping("/testTrac")
-//	public String testTransaction(String id) {
-//		demoService.testTransaction(Integer.parseInt(id));
-//		return "succ";
-//	}
+
+	@ResponseBody
+	@RequestMapping("/testAnnotationOnDubboService")
+	public String testAopAnno(String str) {
+		return demoService.sayString(str);
+	}
+
+	@ResponseBody
+	@RequestMapping("/testTrac")
+	public String testTransaction(String id) {
+		demoService.testTransaction(Integer.parseInt(id));
+		return "succ";
+	}
+
 	@ResponseBody
 	@RequestMapping("/testTracDirect")
 	public String testTracDirect(String id) {
