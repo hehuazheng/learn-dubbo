@@ -10,7 +10,9 @@ import study.learn.dubbo.api.DemoService;
 public class DemoServiceImpl implements DemoService {
 
 	public String sayString(String str) {
-		System.out.println("in demo service impl " + RpcContext.getContext().getAttachment("caller"));
+		System.out.println("in demo service impl "
+				+ RpcContext.getContext().getAttachment("caller")
+				+ RpcContext.getContext().getAttachment("appName"));
 		return "halo " + str;
 	}
 }

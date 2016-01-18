@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 	<dubbo:application name="dubbo-demo-consumer-app" />
-	<dubbo:consumer timeout="3000" check="false" />
+	<dubbo:consumer timeout="3000" check="false" filter="appFilter" />
 	<dubbo:registry address="zookeeper://zkserver1:2181" />
 	<dubbo:reference id="demoService" interface="study.learn.dubbo.api.DemoService" />
 	<dubbo:reference id="demoService2" interface="study.learn.dubbo.api.DemoService2" />

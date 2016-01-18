@@ -10,7 +10,7 @@ import study.learn.dubbo.api.DemoService2;
 public class DemoService2Impl implements DemoService2 {
 	@Override
 	public String echoString(String str) {
-		System.out.println("in demoservice2: " + RpcContext.getContext().getAttachment("caller"));
+		System.out.println("in demoservice2: " + RpcContext.getContext().getAttachment("caller") + RpcContext.getContext().getAttachment("appName"));
 		return str;
 	}
 }

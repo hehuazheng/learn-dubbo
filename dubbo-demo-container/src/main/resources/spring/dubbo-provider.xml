@@ -6,8 +6,8 @@
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 	<dubbo:application name="dubbo-demo-provider-container-app" />
 	<dubbo:registry address="zookeeper://zkserver1:2181" />
-<!-- 	<dubbo:application name="dubbo-demo-provider" /> -->
+	<dubbo:provider retries="0" delay="-1"  filter="appNameAwareFilter" />
 	<dubbo:protocol name="dubbo" port="20880" />
-    <dubbo:service interface="study.learn.dubbo.api.DemoService" ref="demoServiceImpl" retries="0" delay="-1"   />
-    <dubbo:service interface="study.learn.dubbo.api.DemoService2" ref="demoService2Impl" retries="0" delay="-1"   />
+    <dubbo:service interface="study.learn.dubbo.api.DemoService" ref="demoServiceImpl" />
+    <dubbo:service interface="study.learn.dubbo.api.DemoService2" ref="demoService2Impl" />
 </beans>
