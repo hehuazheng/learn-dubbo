@@ -1,2 +1,9 @@
 /target/
 /.settings/
+/dubbo.iml
+/dubbo-demo-provider/dubbo-demo-provider.iml
+/dubbo-demo-container/dubbo-demo-container.iml
+/dubbo-demo-container/target/
+/dubbo-demo-consumer/dubbo-demo-consumer.iml
+/.idea/
+/dubbo-demo-api/dubbo-demo-api.iml
